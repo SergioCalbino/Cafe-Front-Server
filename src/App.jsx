@@ -1,4 +1,8 @@
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import AuthLayout from "./layout/AuthLayout";
+import Login from "./paginas/Login";
+import CreateUser from "./paginas/CreateUser";
+import ForgetPassword from "./paginas/ForgetPassword";
 
 
 
@@ -7,9 +11,15 @@ function App() {
 
   return (
     <>
-
-    <h1 className="font-bold text-2xl " >Hola Vite</h1>
-    <button className="btn bg-teal-400 rounded-none " >Button</button>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<AuthLayout/>} >
+              <Route index element={<Login/>} />
+              <Route path="register" element={<CreateUser/>} />
+              <Route path="forget-password" element={<ForgetPassword/>} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
