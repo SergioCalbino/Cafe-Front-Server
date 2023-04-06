@@ -26,13 +26,11 @@ const Login = () => {
 				})
 				navigate('/products')
 			})
-			
-
-						.catch(err => 
-						setAlerta({
-							msg: err.response.data.msg,
-							error: true
-						}))
+			.catch(err => 
+			setAlerta({
+				msg: err.response.data.msg,
+				error: true
+			}))
 	}
 
 	const handleSubmit = (e) => {
